@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the State Game</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-[#5096edad] font-sans text-white m-0 p-0">
+    <div id="game-container" class="text-center p-4 mt-4">
+        <h1 class="text-4xl font-bold text-white mb-5 text-decoration-line: underline">Guess the State!</h1>
+
+        <!-- Toggle Options for Guessing by Capital or Population -->
+        <div id="guess-toggle" class="flex justify-center items-center mb-5">
+            <label for="guess-type" class="mr-3">Guess the:</label>
+            <select id="guess-type" class="p-2 text-black rounded-lg">
+                <option value="name">State Name</option>
+                <option value="capital">State Capital</option>
+                <option value="iconic">State by Iconic Landmark</option>
+            </select>
+        </div>
+
+        <!-- State Image -->
+        <div>
+            <h id="iconic-description"></h>
+            <div class="flex justify-center items-center">
+                <img id="state-image" src="" alt="State Image" class="max-w-full max-h-[400px] pb-5  transition-all duration-500 ease-in-out transform opacity-100 hover:scale-110"/>
+            </div>
+        </div>
+
+        <!-- Input Field -->
+        <input 
+            id="guess-input" 
+            type="text" 
+            list="guess-list" 
+            placeholder="Your guess..." 
+            class="block w-1/4 mx-auto p-2 mb-5 text-lg border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 text-black">
+
+        <datalist id="guess-list"></datalist>
+
+        <!-- Buttons -->
+        <button id="submit" class="submit-btn bg-blue-500 text-white py-4 px-10 text-2xl rounded-lg transition-all hover:bg-blue-700">Submit</button>
+        <button id="try-again-button" class="try-again-btn bg-gray-500 text-white py-4 px-10 text-2xl rounded-lg transition-all hover:bg-gray-700 hidden">Try Again</button>
+
+        <!-- Score Display -->
+        <p id="score" class="text-xl mt-4">Score: 0</p>
+        <p id="highscore" class="text-xl mt-2">High Score: 0</p>
+
+        <!-- Feedback Message -->
+        <h2 id="feedback" class="mt-4 text-xl font-normal"></h2>
+
+        <!-- Fun Fact Box Section-->
+        <div id="fun-fact-box" class="mx-auto justify-center items-center w-1/2 max-w-lg mt-8 p-4 bg-white rounded-xl border-2 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+            <div id="fun-fact-details" class="text-center text-black">
+                <h1 id="state-name" class="text-2xl font-semibold text-decoration-line: underline mb-1"></h1>
+                <h3 id="state-capital" class="text-lg mb-2"></h3>
+                <h4 id="state-population" class="text-md mb-2"></h4>
+                <p id="fun-fact" class="text-sm"></p>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
