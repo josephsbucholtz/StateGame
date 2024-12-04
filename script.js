@@ -84,20 +84,11 @@ const game = {
     populateStateList() {
         const datalist = document.querySelector("#guess-list");
         datalist.innerHTML = ''; // Clear existing options
-
-        if (this.guessType === 'capital') {
-            this.states.forEach(state => {
-                const option = document.createElement("option");
-                option.value = state.capital;
-                datalist.appendChild(option);
-            });
-        } else { // Default 'name' or 'iconic'
-            this.states.forEach(state => {
-                const option = document.createElement("option");
-                option.value = state.name;
-                datalist.appendChild(option);
-            });
-        }
+        this.states.forEach(state => {
+            const option = document.createElement("option");
+            option.value = state.name;
+            datalist.appendChild(option);
+        });
     },
 
     // Select a random state and display its image
@@ -111,12 +102,21 @@ const game = {
 
         
         if (this.guessType === 'iconic') {
+            document.querySelector(STATE_IMAGE_SELECTOR).classList.remove('hidden');
+            document.querySelector('#captial-image').textContent = '';
             document.querySelector(STATE_IMAGE_SELECTOR).src = `${BASE_ICONIC_PIC_PATH}${this.currentState.iconic_pic}`;
             document.querySelector("#iconic-description").textContent = `${this.currentState.iconic_pic}`.replace(".jpg", "");
         }
+        else if (this.guessType === 'capital') {
+            document.querySelector(STATE_IMAGE_SELECTOR).classList.add('hidden');
+            document.querySelector("#iconic-description").textContent = '';
+            document.querySelector('#captial-image').textContent = `${this.currentState.capital}`;
+        }
         else {
             document.querySelector(STATE_IMAGE_SELECTOR).src = `${BASE_IMAGE_PATH}${this.currentState.image}`;
+            document.querySelector(STATE_IMAGE_SELECTOR).classList.remove('hidden');
             document.querySelector("#iconic-description").textContent = '';
+            document.querySelector('#captial-image').textContent = '';
         }
 
         // Reset UI: Hide the try-again button and fun fact box
