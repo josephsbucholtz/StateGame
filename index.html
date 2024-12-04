@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" contents="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the State Game</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-r from-[#5096edad] to-blue-500 font-sans text-white m-0 p-0">
     <div id="game-container" class="text-center p-4 mt-4">
         <header class="text-4xl font-bold mb-5">
-            <span class="text-red-500">WHAT'S</span> 
-            <span class="text-white">THAT</span> 
-            <span class="text-blue-500">STATE?</span>
+            <span class="text-[#ca0000c9]">WHAT'S</span> 
+            <span class="text-[#ffffffec]">THAT</span> 
+            <span class="text-[#0a0adad1]">STATE?</span>
         </header>
 
         <!-- Toggle Options for Guessing by Capital or Population -->
@@ -28,8 +28,8 @@
 
         <!-- State Image -->
         <div>
-            <h id="iconic-description" class="mb-8 p-4 text-center text-4xl"></h>
-            <div class="flex justify-center items-center">
+            <h id="iconic-description" class="mb-20 p-4 text-center text-4xl"></h>
+            <div class="flex justify-center items-center p-2 pt-8">
                 <img id="state-image" src="" alt="State Image" class="max-w-full max-h-[400px] pb-5 transition-all duration-500 ease-in-out transform opacity-100 hover:scale-110"/>
                 <header id="captial-image" class ="mb-8 p-4 font-bold text-4xl"></header>
             </div>
@@ -59,7 +59,7 @@
         <!-- Fun Fact Box Section-->
         <div id="fun-fact-box" class="mx-auto justify-center items-center w-1/2 max-w-lg mt-8 p-4 bg-white rounded-xl border-2 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
             <div id="fun-fact-details" class="text-center text-black">
-                <h1 id="state-name" class="text-2xl font-semibold text-decoration-line: underline mb-1"></h1>
+                <h1 id="fun-fact-title" class="text-2xl font-semibold text-decoration-line: underline mb-1">Facts:</h1>
                 <h3 id="state-capital" class="text-lg mb-2"></h3>
                 <h4 id="state-population" class="text-md mb-2"></h4>
                 <p id="fun-fact" class="text-sm"></p>
