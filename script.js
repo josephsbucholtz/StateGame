@@ -19,11 +19,11 @@ const game = {
         { name: "California", image: "YaSsDrzcB996.png",iconic_pic:"Golden State Bridge.jpg",capital:"Sacramento", population:"39,538,223", fun_fact: "California is the birthplace of the Internet, with Silicon Valley being home to many of the world’s largest tech companies." },
         { name: "Colorado", image: "wLbHWAjtJC8E.png",iconic_pic:"Cliff Palace, Mesa Verde National Park.jpg",capital:"Denver", population:"5,773,714", fun_fact: "Colorado is home to the highest paved road in North America, the Mount Evans Scenic Byway, reaching an elevation of 14,130 feet." },
         { name: "Connecticut", image: "9YVGZzsskLUJ.png",iconic_pic:"Yale University.jpg",capital:"Hartford", population:"3,605,944", fun_fact: "Connecticut was the first state to issue a state constitution, adopted in 1639." },
-        { name: "Delaware", image: "nDmTXcUnEzs5.png",iconic_pic:"Cape Henlopen State Park, Lewes.jpg",capital:"Dover", population:"989,948", fun_fact: "Delaware was the first state to ratify the U.S. Constitution, doing so on December 7, 1787." },
-        { name: "Florida", image: "xu9zMcsbqP6L.png",iconic_pic:"Cinderella Castle, Walt Disney World Resort.jpg",capital:"Tallahassee", population:"21,538,187", fun_fact: "Florida is the only state that has both a tropical and temperate climate, making it one of the most biodiverse states in the U.S." },
+        { name: "Delaware", image: "nDmTXcUnEzs5.png",iconic_pic:"Cape Henlopen State Park.jpg",capital:"Dover", population:"989,948", fun_fact: "Delaware was the first state to ratify the U.S. Constitution, doing so on December 7, 1787." },
+        { name: "Florida", image: "xu9zMcsbqP6L.png",iconic_pic:"Cinderella Castle.jpg",capital:"Tallahassee", population:"21,538,187", fun_fact: "Florida is the only state that has both a tropical and temperate climate, making it one of the most biodiverse states in the U.S." },
         { name: "Georgia", image: "5eSMxv7JmW7W.png",iconic_pic:"Birth Home, Martin Luther King Jr.jpg",capital:"Atlanta", population:"10,711,908", fun_fact: "Georgia is the birthplace of Coca-Cola, which was invented in Atlanta by Dr. John Stith Pemberton in 1886." },
-        { name: "Hawaii", image: "qdNx8aW2mQu9.png",iconic_pic:"USS Arizona Memorial, Pearl Harbor.jpg",capital:"Honolulu", population:"1,455,271", fun_fact: "Hawaii is the only U.S. state made up entirely of islands, and it is the only state to be located in the Pacific Ocean." },
-        { name: "Idaho", image: "C3KdFYad9q8S.png",iconic_pic:"Shoshone Falls, Twin Falls.jpg",capital:"Boise", population:"1,839,106", fun_fact: "Idaho is known for its potatoes, producing about one-third of the potatoes grown in the U.S. annually." },
+        { name: "Hawaii", image: "qdNx8aW2mQu9.png",iconic_pic:"USS Arizona Memorial.jpg",capital:"Honolulu", population:"1,455,271", fun_fact: "Hawaii is the only U.S. state made up entirely of islands, and it is the only state to be located in the Pacific Ocean." },
+        { name: "Idaho", image: "C3KdFYad9q8S.png",iconic_pic:"Shoshone Falls.jpg",capital:"Boise", population:"1,839,106", fun_fact: "Idaho is known for its potatoes, producing about one-third of the potatoes grown in the U.S. annually." },
         { name: "Illinois", image: "hjdym7TuGxN2.png",iconic_pic:"Cloud Gate.jpg",capital:"Springfield", population:"12,812,508", fun_fact: "Illinois is the birthplace of the modern skyscraper, with the first steel-framed skyscraper built in Chicago in 1885." },
         { name: "Indiana", image: "JJHfxzeg8qam.png",iconic_pic:"Monument Circle.jpg",capital:"Indianapolis", population:"6,785,528", fun_fact: "Indiana is home to the Indy 500, the world’s largest single-day sporting event, which has been held annually since 1911." },
         { name: "Iowa", image: "Q9Pb86pByD7Q.png",iconic_pic:"Birthplace Cottage, Herbert Hoover.jpg",capital:"Des Moines", population:"3,190,369", fun_fact: "Iowa is the nation’s leading producer of corn, providing over a quarter of the total U.S. supply." },
@@ -53,7 +53,7 @@ const game = {
         { name: "Rhode Island", image: "h9kQVqnTGFpL.png",iconic_pic:"The Breakers.jpg",capital:"Providence", population:"1,097,379", fun_fact: "Rhode Island is the smallest U.S. state by area but has the longest official name: 'The State of Rhode Island and Providence Plantations.'" },
         { name: "South Carolina", image: "4HbRWVppSMNY.png",iconic_pic:"Fort Sumter.jpg",capital:"Columbia", population:"5,118,425", fun_fact: "South Carolina was the first state to secede from the Union, leading to the start of the Civil War in 1861." },
         { name: "South Dakota", image: "QytdWUtmDYKQ.png",iconic_pic:"Mount Rushmore.jpg",capital:"Pierre", population:"886,667", fun_fact: "South Dakota is home to Mount Rushmore, where the faces of four U.S. presidents are carved into granite." },
-        { name: "Tennessee", image: "zK6DKpqLBDZ9.png",iconic_pic:"Graceland, Memphis.jpg",capital:"Nashville", population:"6,910,840", fun_fact: "Tennessee is known for its music scene, particularly in Nashville, the 'Country Music Capital of the World.'" },
+        { name: "Tennessee", image: "zK6DKpqLBDZ9.png",iconic_pic:"Graceland.jpg",capital:"Nashville", population:"6,910,840", fun_fact: "Tennessee is known for its music scene, particularly in Nashville, the 'Country Music Capital of the World.'" },
         { name: "Texas", image: "87C5Y9LGTQJs.png",iconic_pic:"The Alamo.jpg",capital:"Austin", population:"29,145,505", fun_fact: "Texas is the second-largest state in the U.S., both in size and population, and has its own power grid." },
         { name: "Utah", image: "X3zKrCtAyPAj.png",iconic_pic:"Delicate Arch, Arches National Park.jpg",capital:"Salt Lake City", population:"3,271,616", fun_fact: "Utah is home to the Great Salt Lake, the largest saltwater lake in the Western Hemisphere." },
         { name: "Vermont", image: "C3ExEbUmURvG.png",iconic_pic:"Stowe Community Church.jpg",capital:"Montpelier", population:"643,077", fun_fact: "Vermont is the leading producer of maple syrup in the United States, producing over 2 million gallons annually." },
@@ -100,7 +100,6 @@ const game = {
         const randomIndex = Math.floor(Math.random() * this.remainingStates.length);
         this.currentState = this.remainingStates.splice(randomIndex, 1)[0]; // Remove selected state from pool
 
-        
         if (this.guessType === 'iconic') {
             document.querySelector(STATE_IMAGE_SELECTOR).classList.remove('hidden');
             document.querySelector('#captial-image').textContent = '';
@@ -119,56 +118,31 @@ const game = {
             document.querySelector('#captial-image').textContent = '';
         }
 
-        // Reset UI: Hide the try-again button and fun fact box
-        document.querySelector('#try-again-button').classList.add('hidden');
         document.querySelector('#fun-fact-box').classList.add('hidden');
-
-        // Show submit section
-        document.querySelector('#submit').classList.remove('hidden');
-        document.querySelector('#guess-input').classList.remove('hidden');
     },
 
-    // Check the user's guess
+    // Validate user input (for example, check if it's a valid state name)
+    isValidGuess(guess) {
+        return this.states.some(state => state.name.toLowerCase() === guess);
+    },
+
     checkGuess() {
         const userGuess = document.querySelector(GUESS_INPUT_SELECTOR).value.trim().toLowerCase();
         const feedback = document.querySelector(FEEDBACK_SELECTOR);
-        // Get selected guess type
-        const guessType = document.querySelector("#guess-type").value;
-
-        let correctAnswer;
-        switch (guessType) {
-            case 'capital':
-                correctAnswer = this.currentState.capital.toLowerCase();
-                break;
-            case 'iconic':
-                correctAnswer = this.currentState.name.toLowerCase();
-                break;
-            default: // 'name'
-                correctAnswer = this.currentState.name.toLowerCase();
-                break;
-        }
 
         // Invalid guess handling
-        if (!userGuess || !this.isValidGuess(userGuess, guessType)) {
-            alert("Please enter a valid guess.");
+        if (!userGuess || !this.isValidGuess(userGuess)) {
+            alert("Please enter a valid state.");
             return;
         }
 
         // Evaluate guess
-        if (userGuess === correctAnswer) {
+        if (userGuess === this.currentState.name.toLowerCase()) {
             feedback.textContent = "Correct!";
             this.score++;
             this.randomImage();
-            // Hide try-again button and fun fact box if correct
-            document.querySelector('#try-again-button').classList.add('hidden');
-            document.querySelector('#fun-fact-box').classList.add('hidden');
         } else {
-            if (guessType === 'capital') {
-                feedback.innerHTML = `Wrong! It was <span class="correct-state"><strong>${this.currentState.capital}</strong></span>.`;
-            }
-            else {
                 feedback.innerHTML = `Wrong! It was <span class="correct-state"><strong>${this.currentState.name}</strong></span>.`;
-            }
 
             // Hide submit section and show try-again button
             document.querySelector('#submit').classList.add('hidden');
@@ -202,19 +176,6 @@ const game = {
         }
     },
 
-    // Validate the guess based on selected guess type (state, capital, or iconic pic)
-    isValidGuess(guess, type) {    
-        // If the guessType is 'capital', only accept capital names and not state names
-        if (type === 'capital') {
-            const validCapitals = this.states.map(state => state.capital.toLowerCase());
-            return validCapitals.includes(guess);
-        }
-
-        if (type === 'name' || type === 'iconic') {
-            const validStateNames = this.states.map(state => state.name.toLowerCase());
-            return validStateNames.includes(guess);
-        }
-    },
 
     // Display the fun fact box when the guess is incorrect
     showFunFactBox() {
@@ -224,8 +185,7 @@ const game = {
         const funFact = document.querySelector("#fun-fact");
         
         funFactBox.classList.remove('hidden'); // Remove hidden
-        funFactBox.classList.add('opacity-100'); // Fade-in effect
-        document.querySelector("#state-name").textContent = `${this.currentState.name}`;
+        
         stateCapital.textContent = `Capital: ${this.currentState.capital}`;
         statePopulation.textContent = `Population: ${this.currentState.population}`;
         funFact.textContent = `Fun Fact: ${this.currentState.fun_fact}`;
